@@ -1,17 +1,20 @@
 <html>
-<script src='https://d3js.org/d3.v5.min.js'></script>
-<!-- <style>
-    circle {
-        fill: lightgreen;
-        stroke: black;
-    }
-</style> -->
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
 
 <body onload='init()'>
     <svg width=1200 height=1200>
     </svg>
+    <input id = "base_button" type = "button" onclick = "init();" value = "Cars by Mileage">
+    <input id = "treemap_button" type = "button" onclick = "displayTreeMap();" value = "Makes by Count">
+    <input id = "bar_mpg_button" type = "button" onclick = "displayBarMPG();" value = "MPG by Make">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
+
+
 </body>
 
 </html>

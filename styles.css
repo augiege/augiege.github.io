@@ -1,0 +1,15 @@
+#base_button {
+    position: relative;
+    bottom: 1020px;
+    right: 100px;
+}
+#treemap_button {
+    position: relative;
+    bottom: 970px;
+    right: 210px;
+}
+#bar_mpg_button {
+    position: relative;
+    bottom: 920px;
+    right: 320px;
+}
