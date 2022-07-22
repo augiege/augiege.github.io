@@ -15,8 +15,8 @@ d3.select("#y_label_mpg").remove();
 d3.select("#treemap").remove();
 d3.select("#treemap_text").remove();
 d3.select("#title_tree").remove();
-d3.select("#base_annotations").remove();
-d3.select("#count_annotations").remove();
+d3.selectAll("#base_annotations").remove();
+d3.selectAll("#count_annotations").remove()
 
 const data = await d3.csv("cars2017_ids.csv");
 
@@ -114,8 +114,8 @@ document.getElementById("bar_mpg_button").onclick = function displayBarMake() {
         d3.select("#treemap").remove();
         d3.select("#treemap_text").remove();
         d3.select("#title_tree").remove();
-        d3.select("#base_annotations").remove();
-        d3.select("#count_annotations").remove();
+        d3.selectAll("#base_annotations").remove();
+        d3.selectAll("#count_annotations").remove();
 
         var xs_count = d3.scaleBand()
           .range([0, 900])
@@ -211,8 +211,8 @@ document.getElementById("treemap_button").onclick = function displayTreeMap() {
         d3.select("#treemap").remove();
         d3.select("#treemap_text").remove();
         d3.select("#title_tree").remove();
-        d3.select("#base_annotations").remove();
-        d3.select("#count_annotations").remove();
+        d3.selectAll("#base_annotations").remove();
+        d3.selectAll("#count_annotations").remove()
         
         // Read data
 d3.csv('count_by_make.csv').then(function(data) {
@@ -230,6 +230,11 @@ d3.csv('count_by_make.csv').then(function(data) {
           .size([canvas_w - 2*margin, canvas_h - 2*margin])
           .padding(4)
           (root)
+        
+    const make_count_annotations = d3.annotation()
+          .type(d3.annotationLabel)
+          .annotations(count_annotations)
+
       
         //use this information to add rectangles:
     d3.select("svg")
@@ -402,10 +407,6 @@ const count_annotations = [
           dy: -130,
           dx: 150
         }].map(function(d){ d.color = "#E8336D"; return d})
-
-        const make_count_annotations = d3.annotation()
-          .type(d3.annotationLabel)
-          .annotations(count_annotations)
 
 }
 
